@@ -13,13 +13,14 @@
 
 ## Getting Started
 
-To obtain a local copy of the project follow this steps:
+To obtain and run a local copy of the project follow this steps:
 
 - Open your console.
 - Type the following "git clone https://github.com/diegoyon/leaderboard.git" if you are using HTTPS or "git clone git@github.com:diegoyon/leaderboard.git" if you are using a SSH key.
 - Press ENTER to create your local clone.
-
-After creating it, you can open the "index.html" file in your browser.
+- Change directory with `cd leaderboard`.
+- Install necessary dependencies with `npm install`.
+- Run the program with `npm start`.
 
 ## Author
 
