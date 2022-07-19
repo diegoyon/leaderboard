@@ -8,15 +8,30 @@
   <script defer src="main.js"></script></head>
   <body>
     <h1>Leaderboard</h1>
-    <section class="recent-scores">
-      <h2>Recent Scores</h2>
-      <button>Refresh</button>
-    </section>
-    <section class="add-score">
-      <h2>Add your score</h2>
-      <input type="text" name="name" id="name" />
-      <input type="text" name="score" id="score" />
-      <button type="submit">Submit</button>
-    </section>
+    <div class="main">
+      <section class="recent-scores">
+        <div class="scores-header">
+          <h2>Recent Scores</h2>
+          <button type="button">Refresh</button>
+        </div>
+        <ul class="table">
+          <li>Name: 100</li>
+          <li>Name: 20</li>
+          <li>Name: 50</li>
+          <li>Name: 78</li>
+          <li>Name: 12.5</li>
+          <li>Name: 77</li>
+          <li>Name: 42</li>
+        </ul>
+      </section>
+      <section class="add-score">
+        <h2>Add your score</h2>
+        <div class="form">
+          <input type="text" name="name" id="name" placeholder="Your name" />
+          <input type="text" name="score" id="score" placeholder="Your score" />
+          <button type="submit">Submit</button>
+        </div>
+      </section>
+    </div>
   </body>
 </html>

@@ -21,7 +21,6 @@ h2 {
 }
 
 button {
-  height: fit-content;
   width: fit-content;
   padding: 0.5rem;
 }
