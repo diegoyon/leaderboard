@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+:root {
+  --default-color: #cbefff;
+}
+
 * {
   font-family: "Rubik", sans-serif;
   box-sizing: border-box;
@@ -27,7 +31,18 @@ h5 {
 
 button {
   width: fit-content;
-  padding: 0.5rem;
+  padding: 0.8rem;
+  border: none;
+  background-color: lightblue;
+  border-radius: 5px;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  border: 1px solid var(--default-color);
 }
 
 input {
@@ -41,23 +56,46 @@ input {
   margin: auto;
 }
 
+.recent-scores {
+  width: 25rem;
+}
+
 .scores-header {
   display: flex;
-  gap: 2rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 .table {
   list-style: none;
-  border: 2px solid black;
+  display: table;
+  width: 100%;
 }
 
 .table li {
   padding: 0.5rem;
+  display: table-row;
 }
 
-.table li:nth-child(2n) {
-  background-color: rgb(202, 202, 202);
+.table li:nth-child(2n-1) {
+  background-color: var(--default-color);
+}
+
+.table li div {
+  display: table-cell;
+  padding: 0.7rem;
+}
+
+li:first-child {
+  font-weight: 500;
+}
+
+li:first-child div {
+  background-color: lightblue;
+}
+
+.table div:nth-child(2) {
+  text-align: center;
 }
 
 .form {
