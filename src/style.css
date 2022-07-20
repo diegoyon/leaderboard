@@ -77,6 +77,10 @@ input {
   display: table-row;
 }
 
+li:first-child {
+  font-weight: 500;
+}
+
 .table li:nth-child(2n-1) {
   background-color: var(--default-color);
 }
@@ -84,10 +88,6 @@ input {
 .table li div {
   display: table-cell;
   padding: 0.7rem;
-}
-
-li:first-child {
-  font-weight: 500;
 }
 
 li:first-child div {
