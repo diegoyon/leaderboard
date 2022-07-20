@@ -1,9 +1,14 @@
 const updateScores = (scores) => {
   const list = document.querySelector('ul');
-  list.innerHTML = '';
+  list.innerHTML = '<li><div>Username</div><div>Score</div></li>';
   for (let i = 0; i < scores.length; i += 1) {
     const li = document.createElement('li');
-    li.innerHTML = `${scores[i].user}: ${scores[i].score}`;
+    const userName = document.createElement('div');
+    const userScore = document.createElement('div');
+    userName.innerHTML = scores[i].user;
+    userScore.innerHTML = scores[i].score;
+    li.appendChild(userName);
+    li.appendChild(userScore);
     list.appendChild(li);
   }
 };

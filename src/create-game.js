@@ -7,5 +7,6 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
   body: JSON.stringify({
     name: 'Squid Game',
   }),
-}).then((res) => res.json());
-// .then((data) => console.log(data.result));
+})
+  .then((res) => res.json())
+  .then((data) => data.result);
