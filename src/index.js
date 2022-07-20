@@ -14,42 +14,47 @@ import "./style.css";
 //   })
 //   .then((data) => console.log(data.result));
 
-// ADD A SCORE
-// fetch(
-//   "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jvP2RQFJf7ELeHvIFZYY/scores/",
-//   {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//       user: "Diego",
-//       score: 98,
-//     }),
-//   }
-// )
-//   .then((res) => {
-//     return res.json();
-//   })
-//   .then((data) => console.log(data.result));
+const addScore = async (userName, userScore) => {
+  const response = await fetch(
+    "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jvP2RQFJf7ELeHvIFZYY/scores/",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: userName,
+        score: userScore,
+      }),
+    }
+  );
+  const JsonResponse = await response.json();
+  console.log(JsonResponse.result);
+  const message = document.querySelector("h5");
+  message.innerHTML = JsonResponse.result;
+  const body = document.querySelector("body");
+  body.appendChild(message);
+  setTimeout(() => {
+    message.innerHTML = "";
+  }, 3000);
+};
 
-// GET SCORES
-// fetch(
-//   "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jvP2RQFJf7ELeHvIFZYY/scores/"
-// )
-//   .then((res) => {
-//     return res.json();
-//   })
-//   .then((data) => console.log(data.result));
+const addButton = document.querySelector(".add-score button");
+addButton.addEventListener("click", () => {
+  const userInput = document.getElementById("name");
+  const scoreInput = document.getElementById("score");
+  addScore(userInput.value, scoreInput.value);
+  userInput.value = "";
+  scoreInput.value = "";
+});
 
 const getScores = async () => {
   const response = await fetch(
     "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jvP2RQFJf7ELeHvIFZYY/scores/"
   );
   const JsonResponse = await response.json();
-  // console.log(JsonResponse.result);
   updateScores(JsonResponse.result);
-  return JsonResponse.result;
+  // return JsonResponse.result;
 };
 
 const refreshButton = document.querySelector(".scores-header button");
