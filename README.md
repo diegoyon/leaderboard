@@ -2,7 +2,7 @@
 
 # Leaderboard
 
-> The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to an extermal leaderboard API service.
+> The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to an external leaderboard API service.
 
 ## Built With
 
